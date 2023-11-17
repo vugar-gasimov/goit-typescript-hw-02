@@ -8,16 +8,33 @@ type AllType = {
   name: string;
   position: number;
   color: string;
-  weight: number
-}
+  weight: number;
+};
 
-function compare (top, bottom): AllType {
+function compare(top: AllType, bottom: AllType): AllType {
   return {
     name: top.name,
     color: top.color,
     position: bottom.position,
     weight: bottom.weight,
-  }
+  };
 }
+
+let topObj: AllType = {
+  name: "box",
+  position: 73,
+  color: "brown",
+  weight: 5,
+};
+
+let bottomObj: AllType = {
+  name: "ball",
+  position: 42,
+  color: "white",
+  weight: 10,
+};
+
+const result: AllType = compare(topObj, bottomObj);
+console.log(result);
 
 export {};

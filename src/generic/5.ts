@@ -4,8 +4,26 @@
 */
 
 interface KeyValuePair {
-  key;
-  value;
+  key: string | number;
+  value: string | number;
 }
+
+const box: KeyValuePair = {
+  key: "boxKey",
+  value: "boxValue",
+};
+
+const ball: KeyValuePair = {
+  key: 1234,
+  value: "ballValue",
+};
+
+// interface KeyValuePair<K, V> {
+//   key: K;
+//   value: V;
+// }
+
+// const box: KeyValuePair<string, number> = { key: "boxKey", value: 1234 };
+// const ball: KeyValuePair<number, boolean> = { key: 1234, value: true };
 
 export {};

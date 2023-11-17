@@ -3,8 +3,42 @@
   Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 */
 
-function merge (objA, objB) {
-  return Object.assign(objA, objB);
+// 1
+
+function merge<T, U>(objA: T, objB: U): T & U {
+  return { ...objA, ...objB };
 }
 
-export {}
+const merged: {
+  name: string;
+} & {
+  age: number;
+} = merge({ name: "Alice" }, { age: 25 });
+
+merged.name;
+
+// 2
+
+// function merge<T, U>(objA: T, objB: U): T & U {
+//   // return Object.assign(objA, objB);
+//   return { ...objA, ...objB };
+// }
+
+// const merged = merge({ name: "Alice" }, { age: 25 });
+
+// merged.name;
+
+// 3
+
+// function merge(objA: object, objB: object) {
+//   return Object.assign(objA, objB);
+// }
+
+// const merged = merge({ name: "Alice" }, { age: 25 }) as {
+//   name: string;
+//   age: number;
+// };
+
+// merged.name;
+
+export {};
