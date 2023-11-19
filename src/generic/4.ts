@@ -5,22 +5,17 @@
 interface ComponentProps {
   title: string;
 }
-class Component<T extends ComponentProps> {
+class Component<T> {
   constructor(public props: T) {}
 }
 
-class PageProps implements ComponentProps {
-  title: string = "";
-}
-
-class Page extends Component<PageProps> {
+class Page extends Component<ComponentProps> {
   pageInfo() {
     console.log(this.props.title);
   }
 }
 
-const pageProps = new PageProps();
-pageProps.title = "Title";
+const pageProps: ComponentProps = { title: "Title" };
 
 const page = new Page(pageProps);
 page.pageInfo();

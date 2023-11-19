@@ -5,7 +5,7 @@ let name: string = "Max";
 let toggle: boolean = true;
 let empty: null = null;
 let notInitialize: undefined;
-let callback: any = (a: number) => {
+let callback: (a: number) => number = (a: number) => {
   return 100 + a;
 };
 
